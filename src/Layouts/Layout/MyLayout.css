@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-layout {
+  display: flex;
+  flex-direction: row;
+}

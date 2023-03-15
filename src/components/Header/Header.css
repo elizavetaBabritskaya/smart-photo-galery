@@ -1,0 +1,34 @@
+.header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.header__logo {
+  margin-top: 15px;
+}
+
+.header__serch {
+  width: 675px;
+  height: 56px;
+  background-image: url('./images/serch.png');
+  background-repeat: no-repeat;
+}
+
+.header__buttonsDownloads {
+  width: 211px;
+  height: 56px;
+  background-image: url('./images/downloads.png');
+  background-repeat: no-repeat;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  background-image: url('./images/avatar.png');
+  background-repeat: no-repeat;
+}
