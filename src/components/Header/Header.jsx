@@ -1,30 +1,31 @@
 import React from "react";
 import {Layout} from 'antd';
 
+import UploadFiles from "../UploadFiles/UploudFiles";
+
 import './Header.css';
-import logo from './images/logo.png';
-import serch from './images/serch.png';
+import logo from './images/logo.svg';
+import Link from "antd/es/typography/Link";
+import SearchTern from "../SearchTern/SearchTerm";
 
 const { Header} = Layout;
 
 
 
 
-const MyHeader = () => {
+const MyHeader = () => {  
   return (
     <Header className="header"
     style={{
       background: "white",
     }}
   >
-    <a className="header__logo">
-      <img src={logo}/>
-    </a>
+    <Link href="#" className="header__logo">
+      <img alt="" src={logo}/>
+    </Link>
 
-    <div className="header__serch"></div>
-
-    <div className="header__buttonsDownloads"></div>
-
+    <SearchTern/>
+    <UploadFiles/>
     <div className="avatar"></div>
   </Header>
   );

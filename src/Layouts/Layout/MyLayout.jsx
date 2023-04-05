@@ -6,31 +6,19 @@ import MyMenu from "../../components/Menu/MyMenu";
 import MyHeader from "../../components/Header/Header";
 
 const { Sider, Content } = Layout;
-const MyLayout = () => {
+const MyLayout = ({children}) => {
   return (
     <Layout className="layout">
       <MyHeader/>
-      <Layout className="site-layout" style={{background:"white"}}>
+      <Layout className="site-layout" style={{background:"white", flexDirection:"row"}}>
       
-      <Sider style={{
-        background: "white",
-        padding: 0,
-      }}>
+      <aside className="side__sider" style={{width:"250px"}}>
         <div className="logo" />
         <MyMenu />
-      </Sider>
-      <Content
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: 280,
-            background: "white",
-            display:"flex",
-            flexDirection: "row",
-          }}
-        >
-               
-        </Content>
+      </aside>
+      <Content className="site__content" style={{marginLeft:"60px"}}>
+        {children}    
+      </Content>
       </Layout>
     </Layout>
   );

@@ -1,0 +1,16 @@
+.myPhoto__title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 33px;
+  color: #081472;
+  margin-bottom: 40px;
+  /* margin-left: 60px; */
+}
+
+.myPhoto__all-albom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 15px));
+  grid-gap: 32px;
+  grid-auto-flow: dense;
+}
