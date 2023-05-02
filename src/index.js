@@ -1,14 +1,17 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import MyLayout from './Layouts/Layout/MyLayout';
-import MyPhoto from './pages/MyPhoto/MyPhoto';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import store from './store/store';
+import './index.css';
+
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <MyPhoto/>
-  </React.StrictMode>
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
 
 

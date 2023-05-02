@@ -1,0 +1,2 @@
+export const SET_OPEN_WINDOW = "SET_OPEN_WINDOW";
+export const SET_CLOSE_WINDOW = "SET_CLOSE_WINDOW";

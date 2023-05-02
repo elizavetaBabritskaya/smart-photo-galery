@@ -5,18 +5,18 @@ import { Layout} from 'antd';
 import MyMenu from "../../components/Menu/MyMenu";
 import MyHeader from "../../components/Header/Header";
 
-const { Sider, Content } = Layout;
+const {Content } = Layout;
 const MyLayout = ({children}) => {
   return (
-    <Layout className="layout">
+    <Layout className="layout" style={{maxWidth:"1920px", width:"100%"}}>
       <MyHeader/>
       <Layout className="site-layout" style={{background:"white", flexDirection:"row"}}>
       
-      <aside className="side__sider" style={{width:"250px"}}>
+      <aside className="side__sider" style={{maxWidth:"288px", width:"100%", marginTop:"44px"}}>
         <div className="logo" />
         <MyMenu />
       </aside>
-      <Content className="site__content" style={{marginLeft:"60px"}}>
+      <Content className="site__content" style={{marginLeft:"71px", marginTop:"44px"}}>
         {children}    
       </Content>
       </Layout>

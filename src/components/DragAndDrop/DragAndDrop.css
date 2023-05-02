@@ -17,6 +17,7 @@
 }
 
 .DragAndDrop__input {
+  position: relative;
   width: 400px;
   border: 1px dashed #081472;
   border-radius: 15px;
@@ -98,6 +99,14 @@
   height: fit-content;
   flex-direction: column;
   justify-content: space-between;
+  
+}
+
+.DragAndDrop-previe__item__info p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #081472;
 }
 
 .DragAndDrop-preview__item__del {
@@ -123,4 +132,11 @@
 .upload {
   position: relative;
   margin-top: 20px;
+}
+
+.button-close {
+  position: relative;
+  left: 62%;
+  background-color: #DADCEA;
+  border: none;  
 }
