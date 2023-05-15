@@ -4,24 +4,22 @@ import ReactDOM from "react-dom/client";
 
 import MyLayout from "../../Layouts/Layout/MyLayout";
 import Carousel from "../../components/Carousel/Carousel";
-import "./MyPhoto.css";
-
-import {useGetPhotosQuery} from '../../store/api'
+import "./Search.css";
+// import getSearchPhoto from "../../actions/getSearchPhoto/actionGetSearchPhoto";
+import openCarousel from "../../actions/carousel/actionOpenCarousel";
 import { UPDATE_SETTING } from "../../reducers/openSetting";
+import { useSearchPhotoQuery } from "../../store/searchApi";
 import { UPDATE_VIEV_WINDOW_OPEN } from "../../reducers/openVievWindow";
-import VievWindow from "../../components/VievWindow/VievWindow"
+import VievWindow from "../../components/VievWindow/VievWindow";
 
-const MyPhoto = () => {
+const Search = () => {
+  const isVievWindowOpen = useSelector((store)=> store.isVievWindowOpen.isVievWindowOpen)
   const [selectedPhoto, setSelectedPhoto] = useState();
   const [vievPhoto, setVievPhoto] = useState();
   const [chooses, setChooses] = useState(false);
   const dispatch = useDispatch();
   const isShowSetting = useSelector((store) => store.isSettingOpen.isSettingOpen);
-  const isVievWindowOpen = useSelector((store)=> store.isVievWindowOpen.isVievWindowOpen)
-  // localStorage.setItem("checked-radio", false)
-  const {data = [], isLoading} = useGetPhotosQuery("", !JSON.parse(localStorage.getItem("checked-radio")) ? {
-    pollingInterval: 3000,
-  }: "");
+  const {data= [], isLoading} = useSearchPhotoQuery(localStorage.getItem("input_text"), !JSON.parse(localStorage.getItem("checked-radio")) ? {pollingInterval: 2000} :"")
 
 
   const addClassSelected = (value) => {
@@ -46,33 +44,36 @@ const MyPhoto = () => {
   };
 
   return (
-    <MyLayout className="layout__myPhoto">    
-      <h2 className="myPhoto__title">Мои фотографии</h2>
+    <MyLayout className="layout__myPhoto">
+      <h2 className="myPhoto__title">{localStorage.getItem("input_text")}</h2>
       <div className="myPhoto__all-albom">
-        {!isLoading && data.map((result) => (          
+        {!isLoading && data.map((result) => (
+          <>
+          
+            {(
               <div className="radioButton">
-                <label for={`radio${result.url}`} >
-                <input
-                  id={`radio${result.url}`}
-                  type="radio"
-                  name="radio"
-                  value={`radio${result.url}`}
-                  onChange={() => {choose(result.url)}}
-                  checked={JSON.parse(localStorage.getItem("checked-radio"))}
-                />
-                <span className="state"></span>
-                </label>
-                <button style={{ width: "150px", height: "150px" }} className="img__button" onClick={()=>showViev(result.url)} >
+              <label for={`radio${result.url}`} >
+              <input
+                id={`radio${result.url}`}
+                type="radio"
+                name="radio"
+                value={`radio${result.url}`}
+                onChange={() => {choose(result.url)}}
+                checked={JSON.parse(localStorage.getItem("checked-radio"))}
+              />
+              <span className="state"></span>
+              </label>
+                <button className="img__button" onClick={()=>showViev(result.url)}>
                   <img
-                    style={{ width: "150px", height: "150px" }} 
+                    style={{ width: "150px", height: "150px" }}
                     className="album__photo"
                     src={result.url}
                     alt={""}
                   />
                 </button>
               </div>
-            
-            
+            )}
+          </>
         ))}
       </div>
       {isVievWindowOpen && (
@@ -83,4 +84,4 @@ const MyPhoto = () => {
     </MyLayout>
   );
 };
-export default MyPhoto;
+export default Search;

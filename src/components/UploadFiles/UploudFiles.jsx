@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import openDropWindow from "../../actions/dropWindow/actionOpenDropWindow";
+
 import DragAndDrop from "../DragAndDrop/DragAndDrop";
 import './UploudFiles.css'
 
 import IconDownLoads from './images/downloads.svg'
+import { UPDATE_DROP } from "../../reducers/openDrop";
 
 
 
@@ -13,11 +14,11 @@ const UploadFiles = () => {
 
   const dispatch = useDispatch();
   const showingDropWindow = () => {
-    console.log("click");
-    dispatch(openDropWindow());
+    dispatch(UPDATE_DROP(true));
+    console.log("showing drag and drop open " + isShow);
   };
 
-  const isShow = useSelector((state)=>state.dropReducer.isDropOpen)
+  const isShow = useSelector((store)=>store.isDropOpen.isDropOpen)
   const onFileChange = (files) => {
     console.log(files);
   }
@@ -32,7 +33,7 @@ return (
       {isShow && <div>
         <div className="open_window" onClick={showingDropWindow}></div> 
       <DragAndDrop onFileChange={(files) => onFileChange(files)}/>
-      </div>}
+      </div>} 
   </div>
 );
 };

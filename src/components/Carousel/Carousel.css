@@ -9,10 +9,16 @@
   height: 100%;
 }
 
-.carousel__close-botton {
-  position: absolute;
+.carousel__close {
   height: 50px;
   width: 50px;
+  padding: auto;
+}
+
+.carousel__close-botton {
+  position: absolute;
+  height: 20px;
+  width: 20px;
   background-color: #DADCEA;
   border-radius: 50%;
   top: 30px;

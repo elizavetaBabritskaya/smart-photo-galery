@@ -1,15 +1,24 @@
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import rootReducer from "../reducers/rootReducer";
+import { configureStore } from "@reduxjs/toolkit";
+import {Api} from "./api";
+import {isDropOpen} from "../reducers/openDrop"
+import { isSettingOpen } from "../reducers/openSetting";
+import {isVievWindowOpen} from "../reducers/openVievWindow"
+import { searchApi } from "./searchApi";
 
 const initialState = {
   isDropOpen: false,
-  isOpen: false,
-  carouselIsOpen: false,
-  photos:[]
+  isSettingOpen: false,
+  isVievWindowOpen: false
 }
 
-const store = createStore(rootReducer, initialState ,applyMiddleware(thunk));
+export const store = configureStore ({
+  reducer: {
+    isDropOpen: isDropOpen.reducer,
+    isSettingOpen: isSettingOpen.reducer,
+    isVievWindowOpen: isVievWindowOpen.reducer,
+    [Api.reducerPath] : Api.reducer,
+    [searchApi.reducerPath]: searchApi.reducer 
+  },
+  middleware: (getDefaultMiddlware) => getDefaultMiddlware().concat(Api.middleware).concat(searchApi.middleware)
+})
 
-
-export default store;

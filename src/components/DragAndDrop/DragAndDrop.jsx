@@ -1,14 +1,17 @@
 import React, { useRef, useState } from "react";
+import {RootState, }  from "../../store/store"
 import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
-import closeDropWindow from '../../actions/dropWindow/actionCloseDropWindow'
 import uploadImg from "./images/cloud_upload.svg";
 import closeImg from "./images/close.svg"
 import "./DragAndDrop.css";
+import { Link } from "react-router-dom";
+import { UPDATE_DROP } from "../../reducers/openDrop";
 
 const hostUrl = "http://localhost:8080/uploadImage";
 
 const DragAndDrop = (props) => {
+  const isDropOpen = useSelector((store) => store.isDropOpen.isDropOpen)
 
   const dispatch = useDispatch(); 
   
@@ -35,7 +38,7 @@ const DragAndDrop = (props) => {
     const data = await res;
 
     setUploaded(data);
-    dispatch(closeDropWindow());
+    dispatch(UPDATE_DROP(false));
   };
 
   const onDragEnter = () => wrapperRef.current.classList.add("dragover");
@@ -45,7 +48,7 @@ const DragAndDrop = (props) => {
   const onDrop = () => wrapperRef.current.classList.remove("dragover");
 
   const click = () => {
-    dispatch(closeDropWindow());
+    dispatch(UPDATE_DROP(false));
   }
 
   const onFileDrop = (e) => {
@@ -104,13 +107,17 @@ const DragAndDrop = (props) => {
                 </div>
               ))}
             </div>
+            <Link to='/' onClick={handleUpload}>
             <button
               className="upload DragAndDrop__button"
               type="submit"
-              onClick={handleUpload}
+              
             >
+              
               Upload Photo
+              
             </button>
+            </Link>
           </div>
         ) : null}
       </div>

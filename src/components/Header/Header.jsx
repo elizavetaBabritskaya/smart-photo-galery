@@ -12,7 +12,7 @@ import closeImage from "./images/close.svg"
 import logo from "./images/logo.svg";
 import Link from "antd/es/typography/Link";
 import SearchTern from "../SearchTern/SearchTerm";
-import closeSetting from "../../actions/settings/actionCloseSetting";
+import { UPDATE_SETTING } from "../../reducers/openSetting";
 
 const { Header } = Layout;
 
@@ -20,10 +20,11 @@ const hostForDelete = "http://localhost:8080/deleteImage";
 
 const MyHeader = () => {
   const dispatch = useDispatch();
-  const isSetting = useSelector((state) => state.settingReducer.isOpen);
+  const isSetting = useSelector((store) => store.isSettingOpen.isSettingOpen);
 
   const closeSet = () => {
-    dispatch(closeSetting())
+    dispatch(UPDATE_SETTING(false));
+    localStorage.setItem("checked-radio", false)
   }
 
   const deletePhoto = async () => {
@@ -31,7 +32,8 @@ const MyHeader = () => {
       headers: { "Content-Type": "application/json" },
       method: "DELETE",
       body: JSON.stringify({ files: localStorage.getItem("selectedPhoto") }),
-    }).then(dispatch(closeSetting()));
+    }).then(dispatch(UPDATE_SETTING(false)));
+    localStorage.setItem("checked-radio", false)
   };
 
   return (
@@ -43,7 +45,7 @@ const MyHeader = () => {
             background: "white",
           }}
         >
-          <Link href="#" className="header__logo">
+          <Link href="/" className="header__logo">
             <img alt="" src={logo} />
           </Link>
 

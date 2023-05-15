@@ -1,0 +1,70 @@
+.viev__container {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.81);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.viev__close {
+  height: 50px;
+  width: 50px;
+  padding: auto;
+  top: 30px;
+  right: 30px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viev__close-botton {
+  height: 15px;
+  width: 15px;
+}
+
+.viev__main {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 1720px;
+  max-height: 1000px;
+  height: 100%;
+  width: calc(100% - 200px);
+  display: flex;
+  align-items: center;
+  position: absolute; 
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.viev__window {
+  display: flex;
+  width: 1320px;
+  max-height: 920px;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 40px;
+}
+
+.viev__window img {
+  max-width: 1320px;
+  width: 100%;
+}
+
+.viev__simular-img {
+  width: 275px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15px, 125px));
+  grid-gap: 8px;
+  grid-auto-flow: row dense;
+}

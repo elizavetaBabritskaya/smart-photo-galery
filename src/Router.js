@@ -1,12 +1,14 @@
 import React from "react";
 import {BrowserRouter, Route, Routes } from "react-router-dom";
-import MyLayout from "./Layouts/Layout/MyLayout";
+import MyPhoto from "./pages/MyPhoto/MyPhoto";
+import Search from "./pages/Search/Search";
 
 function Router() {
   return (
    <BrowserRouter> 
       <Routes>
-        <Route path='/' element={<MyLayout/>}/> 
+        <Route path='/' element={<MyPhoto/>}/> 
+        <Route path='/search' element={<Search/>}/>
       </Routes>
     </BrowserRouter>
   );

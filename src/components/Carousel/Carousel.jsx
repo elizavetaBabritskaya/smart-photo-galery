@@ -30,7 +30,7 @@ import actionCloseCarousel from "../../actions/carousel/actionCloseCarousel"
     dispatch(actionCloseCarousel())
   }
 
-  const PAGE_WIDTH = 1320
+  const PAGE_WIDTH = 1420
 
   useEffect(() => {
     setPages(
@@ -48,7 +48,7 @@ import actionCloseCarousel from "../../actions/carousel/actionCloseCarousel"
 
   return (
     <div className="carousel__container">
-      <button onClick={closeCarousel}>
+      <button onClick={closeCarousel} className="carousel__close">
       <img src={IconClose} alt="close" className="carousel__close-botton"/>
       </button>
     <div className="carousel__main">

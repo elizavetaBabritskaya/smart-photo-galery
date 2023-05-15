@@ -14,6 +14,7 @@
   flex-direction: column;
   align-items: center;
   padding: 60px 81px;
+  z-index: 1;
 }
 
 .DragAndDrop__input {

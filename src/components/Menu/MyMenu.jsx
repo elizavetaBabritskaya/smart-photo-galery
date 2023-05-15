@@ -19,7 +19,7 @@ const MyMenu = () => {
 
   return (
     <ul className="side__menu"> 
-      <Link href="#"><li className={`menu__elem_link ${addClassSelected(1)}`} onClick={()=>setSelectedAnswer(1)}>
+      <Link href="/"><li className={`menu__elem_link ${addClassSelected(1)}`} onClick={()=>setSelectedAnswer(1)}>
         <div className="menu__elem">
           <img className="link__img" alt="" src={IconPhoto}/>
           Мои фото

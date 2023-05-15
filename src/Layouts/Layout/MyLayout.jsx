@@ -4,11 +4,18 @@ import { Layout} from 'antd';
 
 import MyMenu from "../../components/Menu/MyMenu";
 import MyHeader from "../../components/Header/Header";
+import { useSelector } from "react-redux";
+import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
 
 const {Content } = Layout;
 const MyLayout = ({children}) => {
+  const isDropOpen = useSelector((store)=> store.isDropOpen.isDropOpen)
   return (
     <Layout className="layout" style={{maxWidth:"1920px", width:"100%"}}>
+      {isDropOpen && <div>
+        <div className="open_window"></div> 
+      <DragAndDrop/>
+      </div>} 
       <MyHeader/>
       <Layout className="site-layout" style={{background:"white", flexDirection:"row"}}>
       
