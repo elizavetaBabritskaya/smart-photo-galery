@@ -29,6 +29,7 @@
 }
 
 .DregAndDrop__title {
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -52,6 +53,8 @@
 }
 
 .DragAndDrop__input__label {
+  font-family: 'Raleway';
+  font-weight: 600;
   text-align: center;
   font-weight: 600;
   padding: 10px;
@@ -104,6 +107,7 @@
 }
 
 .DragAndDrop-previe__item__info p {
+  font-family: 'Raleway';
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;

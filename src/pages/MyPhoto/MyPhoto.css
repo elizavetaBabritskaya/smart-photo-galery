@@ -1,10 +1,10 @@
 .myPhoto__title {
+  font-family: 'Raleway';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 27px;
-  line-height: 33px;
+  line-height: 32px;
   color: #081472;
-  margin-bottom: 40px;
   /* margin-left: 60px; */
 }
 

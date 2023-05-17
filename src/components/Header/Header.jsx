@@ -28,11 +28,12 @@ const MyHeader = () => {
   }
 
   const deletePhoto = async () => {
+    console.log(localStorage.getItem("selectedPhoto"))
     const res = await fetch(hostForDelete, {
       headers: { "Content-Type": "application/json" },
       method: "DELETE",
       body: JSON.stringify({ files: localStorage.getItem("selectedPhoto") }),
-    }).then(dispatch(UPDATE_SETTING(false)));
+    }).then(()=>{dispatch(UPDATE_SETTING(false)); localStorage.setItem("checked-radio", false)});
     localStorage.setItem("checked-radio", false)
   };
 

@@ -18,13 +18,13 @@ const SearchTern = () => {
   };
 
   return (
-    <div className="header__search">
+    <form className="header__search">
         <button type="submit" onClick={handleSearch} className="search__button">
           {" "}
           <img src={SearchIcon} alt="search" />{" "}
         </button>
       <input type="text" className="search__input" placeholder="Поиск фото" />
-    </div>
+    </form>
   );
 };
 

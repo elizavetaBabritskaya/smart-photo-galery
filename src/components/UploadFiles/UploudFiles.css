@@ -24,6 +24,14 @@
   margin-right: 15px;
 }
 
+.header__downloads:hover {
+  background-color: #FDC431;
+}
+
+.header__downloads:active {
+  background-color: #FFCF52;
+}
+
 .open_window {
   position: fixed;
   width: 1000vh;

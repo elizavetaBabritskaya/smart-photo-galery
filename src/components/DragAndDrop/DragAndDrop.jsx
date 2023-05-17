@@ -114,7 +114,7 @@ const DragAndDrop = (props) => {
               
             >
               
-              Upload Photo
+              Загрузить фото
               
             </button>
             </Link>

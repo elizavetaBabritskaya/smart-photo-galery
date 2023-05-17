@@ -26,6 +26,15 @@ export const Api = createApi ({
           body: photo
       })
     }),
+
+    // similarPhoto: build.query({
+    //   query:()=>({
+    //     url: "/files",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    // })
+    // })
   })
 });
 

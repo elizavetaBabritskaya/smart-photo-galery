@@ -19,7 +19,8 @@ const Search = () => {
   const [chooses, setChooses] = useState(false);
   const dispatch = useDispatch();
   const isShowSetting = useSelector((store) => store.isSettingOpen.isSettingOpen);
-  const {data= [], isLoading} = useSearchPhotoQuery(localStorage.getItem("input_text"), !JSON.parse(localStorage.getItem("checked-radio")) ? {pollingInterval: 2000} :"")
+  localStorage.setItem("checked-radio", true)
+  const {data= [], isLoading} = useSearchPhotoQuery(localStorage.getItem("input_text"), !(localStorage.getItem("checked-radio")) ? {pollingInterval: 2000} :"")
 
 
   const addClassSelected = (value) => {
@@ -59,7 +60,7 @@ const Search = () => {
                 name="radio"
                 value={`radio${result.url}`}
                 onChange={() => {choose(result.url)}}
-                checked={JSON.parse(localStorage.getItem("checked-radio"))}
+                checked={JSON.parse(localStorage.getItem("checked-radio")) ? result.checked: ""}
               />
               <span className="state"></span>
               </label>

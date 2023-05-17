@@ -18,12 +18,10 @@ const MyPhoto = () => {
   const dispatch = useDispatch();
   const isShowSetting = useSelector((store) => store.isSettingOpen.isSettingOpen);
   const isVievWindowOpen = useSelector((store)=> store.isVievWindowOpen.isVievWindowOpen)
-  // localStorage.setItem("checked-radio", false)
-  const {data = [], isLoading} = useGetPhotosQuery("", !JSON.parse(localStorage.getItem("checked-radio")) ? {
-    pollingInterval: 3000,
-  }: "");
+  //localStorage.setItem("checked-radio", false)
+  const {data = [], isLoading} = useGetPhotosQuery("",!JSON.parse(localStorage.getItem("checked-radio")) ? {pollingInterval: 3000}:"" );
 
-
+//
   const addClassSelected = (value) => {
     if (selectedPhoto === value && isShowSetting) {
       return "selected";
@@ -32,10 +30,10 @@ const MyPhoto = () => {
   };
 
   const choose = (value) => {
+    localStorage.setItem("checked-radio", true)
     setSelectedPhoto(value);
     dispatch(UPDATE_SETTING(true));
     const set = localStorage.setItem("selectedPhoto", value);
-    localStorage.setItem("checked-radio", true)
     setChooses(!chooses);
     console.log(chooses)
   };
@@ -55,10 +53,10 @@ const MyPhoto = () => {
                 <input
                   id={`radio${result.url}`}
                   type="radio"
-                  name="radio"
+                  name={`radio${result.url}`}
                   value={`radio${result.url}`}
                   onChange={() => {choose(result.url)}}
-                  checked={JSON.parse(localStorage.getItem("checked-radio"))}
+                  checked={JSON.parse(localStorage.getItem("checked-radio")) ? result.checked: ""}
                 />
                 <span className="state"></span>
                 </label>
@@ -76,7 +74,7 @@ const MyPhoto = () => {
         ))}
       </div>
       {isVievWindowOpen && (
-          <VievWindow>
+          <VievWindow value={vievPhoto}>
             <img src={vievPhoto} alt=""/>
           </VievWindow>
         )} 
