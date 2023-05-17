@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import UploadFiles from "../UploadFiles/UploudFiles";
 
@@ -13,12 +14,14 @@ import logo from "./images/logo.svg";
 import Link from "antd/es/typography/Link";
 import SearchTern from "../SearchTern/SearchTerm";
 import { UPDATE_SETTING } from "../../reducers/openSetting";
+import {UPDATE_AUTH} from "../../reducers/authReducer"
 
 const { Header } = Layout;
 
 const hostForDelete = "http://localhost:8080/deleteImage";
 
 const MyHeader = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const isSetting = useSelector((store) => store.isSettingOpen.isSettingOpen);
 
@@ -26,6 +29,18 @@ const MyHeader = () => {
     dispatch(UPDATE_SETTING(false));
     localStorage.setItem("checked-radio", false)
   }
+
+  // const exit = async()=> {
+  //   localStorage.clear();
+  //   navigate("/sign")
+  //   dispatch(UPDATE_AUTH(false))
+  // }
+
+const exit = async()=> {
+  localStorage.clear();
+    navigate("/sign")
+    dispatch(UPDATE_AUTH(false))
+}
 
   const deletePhoto = async () => {
     console.log(localStorage.getItem("selectedPhoto"))
@@ -52,7 +67,9 @@ const MyHeader = () => {
 
           <SearchTern />
           <UploadFiles />
-          <div className="avatar"></div>
+          <button onClick={exit} className="button__exit">
+
+          </button>
         </Header>
       )}
 

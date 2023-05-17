@@ -51,3 +51,23 @@
   height: 16px;
   background-repeat: no-repeat;
 }
+
+.button__exit {
+  background-image: url("./images/logout.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  border: none;
+  margin-left: 90px;
+  background-color: #434B8E;
+  width: 61px;
+  height: 61px;
+}
+
+.button__exit:hover {
+  background-color: #081472;;
+}
+
+.button__exit:active {
+  background-color: #040E5F;
+}

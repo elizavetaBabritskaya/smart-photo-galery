@@ -11,12 +11,13 @@
 }
 
 .title__sign {
-  margin-top: 50px;
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 47px;
   color: #081472;
+  margin-top: 50px;
 }
 
 .sign__nav {
@@ -75,7 +76,7 @@
 
 .email__input:focus-visible  {
   outline: none;
-  /* border: none; */
+  border-color: #081472;
 }
 
 .button__submit-sign {

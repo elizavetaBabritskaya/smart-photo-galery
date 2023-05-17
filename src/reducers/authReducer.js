@@ -3,7 +3,6 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     authorized: false,
-    error:[]
 }
 
 export const authReducer = createSlice({

@@ -23,7 +23,7 @@ const SignIn = () => {
       const data = await login({email, password}).unwrap()
       localStorage.setItem("token", data.accessToken);
       dispatch(UPDATE_AUTH(true))
-      return navigate("/")
+      // return navigate("/")
   }
 
 

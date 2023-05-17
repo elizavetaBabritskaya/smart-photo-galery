@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {Api} from "./api";
+import {useDispatch} from "react-redux";
 import {isDropOpen} from "../reducers/openDrop"
 import { isSettingOpen } from "../reducers/openSetting";
 import {isVievWindowOpen} from "../reducers/openVievWindow"
@@ -11,7 +12,6 @@ const initialState = {
   isDropOpen: false,
   isSettingOpen: false,
   isVievWindowOpen: false,
-  authReducer: false
 }
 
 export const store = configureStore ({
@@ -27,3 +27,4 @@ export const store = configureStore ({
   middleware: (getDefaultMiddlware) => getDefaultMiddlware().concat(Api.middleware).concat(searchApi.middleware).concat(authApi.middleware)
 })
 
+export const useStoreDispatch = () =>  store.dispatch

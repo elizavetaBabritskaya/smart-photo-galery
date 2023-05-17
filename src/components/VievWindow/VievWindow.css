@@ -59,8 +59,8 @@
 .viev__window img {
   max-width: 1320px;
   max-height: 920px;
-  height: 100%;
-  width: 100%;
+  height: fit-content;
+  width: fit-content;
 }
 
 .viev__simular-img::before {

@@ -4,7 +4,7 @@ import MyPhoto from "./pages/MyPhoto/MyPhoto";
 import Regestration from "./pages/Registration/Registartion";
 import Search from "./pages/Search/Search";
 import SignIn from "./pages/SignIn/SignIn";
-import NotAuthorizedLayout from "./Layouts/PublicLayout/PublicLayout";
+import PublicLayout from "./Layouts/PublicLayout/PublicLayout";
 import PrivateLayout from "./Layouts/PrivateLayout/PrivateLayout";
 
 function Router() {
@@ -13,8 +13,8 @@ function Router() {
       <Routes>
         <Route path='/' element={<PrivateLayout><MyPhoto/></PrivateLayout>}/> 
         <Route path='/search' element={<PrivateLayout> <Search/></PrivateLayout>}/>
-        <Route path='/registration' element={<NotAuthorizedLayout><Regestration/></NotAuthorizedLayout>}/>
-        <Route path="/sign" element={<NotAuthorizedLayout> <SignIn/></NotAuthorizedLayout>}/>
+        <Route path='/registration' element={<PublicLayout><Regestration/></PublicLayout>}/>
+        <Route path="/sign" element={<PublicLayout> <SignIn/></PublicLayout>}/>
       </Routes>
     </BrowserRouter>
   );

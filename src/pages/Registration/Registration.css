@@ -11,12 +11,13 @@
 }
 
 .title__sign {
-  margin-top: 50px;
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 47px;
   color: #081472;
+  margin-top: 50px;
 }
 
 .sign__nav {
@@ -73,6 +74,10 @@
   color: #AFB2CD;
 }
 
+.name__input:focus-visible {
+  border-color: #081472;
+}
+
 .email__label {
   font-family: 'Raleway';
   font-style: normal;
@@ -95,6 +100,10 @@
   font-size: 20px;
   line-height: 23px;
   color: #AFB2CD;
+}
+
+.email__input:focus-visible{
+  border-color: #081472;
 }
 
 .button__submit {
