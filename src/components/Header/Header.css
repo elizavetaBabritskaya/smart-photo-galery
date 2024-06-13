@@ -1,0 +1,73 @@
+.header {
+  max-width: 1920px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 29px 169px 0 125px;
+}
+
+.header__logo {
+  margin-top: 15px;
+  margin-right: 175px;
+}
+
+.header__search {
+  margin-right: 155px;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  background-image: url('./images/avatar.png');
+  background-repeat: no-repeat;
+  margin-left: 50px;
+}
+
+.button-delete {
+  background-color: #DADCEA;
+  border: none;
+  width: 16px;
+  height: 16px;
+}
+
+.header__setting {
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 37px;
+}
+
+.group-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.button-close {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+}
+
+.button__exit {
+  background-image: url("./images/logout.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  border: none;
+  margin-left: 90px;
+  background-color: #434B8E;
+  width: 61px;
+  height: 61px;
+}
+
+.button__exit:hover {
+  background-color: #081472;;
+}
+
+.button__exit:active {
+  background-color: #040E5F;
+}

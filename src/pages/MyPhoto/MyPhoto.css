@@ -1,0 +1,74 @@
+.myPhoto__title {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 32px;
+  color: #081472;
+  /* margin-left: 60px; */
+}
+
+.radioButton {
+  /* width: 150px;
+  height: 150px; */
+}
+
+.radioButton input[type="radio"] {
+  display: none;
+}
+
+label{
+  display: block;
+  position: relative;
+}
+
+.state {
+  display: block;
+  position: relative;
+  left: 17px;
+  top: 31px;
+  width:19px;
+  height:19px;
+}
+
+/* .state {
+  content: "";
+  display:inline-block;
+  position: relative;
+  left: 17px;
+  top: 31px;
+  width:19px;
+  height:19px;
+  vertical-align:middle;
+  border: 2px solid #081472;
+  border-radius: 100%;
+  cursor:pointer;
+} */
+
+label:hover input~ .state {
+  content: "";
+  display:block;
+  position: relative;
+  left: 17px;
+  top: 31px;
+  width:19px;
+  height:19px;
+  border: 2px solid #081472;
+  border-radius: 100%;
+  cursor:pointer;
+}
+
+label input:checked~ .state {
+  background:url("./images/check.svg") center no-repeat;
+  content: "";
+  display:block;
+  position: relative;
+  left: 17px;
+  top: 31px;
+  width:19px;
+  height:19px;
+  border: 2px solid #081472;
+  border-radius: 100%;
+  cursor:pointer;
+}
+

@@ -1,0 +1,76 @@
+.myPhoto__title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 33px;
+  color: #081472;
+  margin-bottom: 40px;
+  /* margin-left: 60px; */
+}
+
+.myPhoto__all-albom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 15px));
+  grid-gap: 8px;
+  grid-auto-flow: dense;
+}
+
+.img__button {
+  background-color: white;
+  border: none;
+}
+
+.checkbox{
+
+}
+
+.checkbox label:hover:before{
+  content:"";
+  display:block;
+  width:19px;
+  height:19px;
+  position:absolute;
+  left: 10.42%;
+  right: 10.42%;
+  top: 10.42%;
+  bottom: 10.42%;
+  background-color:transparent;
+  border-radius:50px;
+  border: 1px solid;
+}
+
+.checkbox label:after{
+  content:"";
+  display:block;
+  width:10px;
+  height:7px;
+  position:absolute;
+  left: 13.42%;
+  right: 11.42%;
+  top: 12.42%;
+  bottom: 10.42%;
+  border-left:1px solid transparent;
+  border-bottom:1px solid transparent;
+  transform:rotate(-45deg);
+}
+.checkbox input[type=checkbox]{
+  display:none;
+}
+.checkbox input[type=checkbox]:checked + label:before{
+  content:"";
+  display:block;
+  width:19px;
+  height:19px;
+  position:absolute;
+  left: 10.42%;
+  right: 10.42%;
+  top: 10.42%;
+  bottom: 10.42%;
+  background-color:transparent;
+  border-radius:50px;
+  border: 1px solid;
+  /* background-color:#081472; */
+}
+.checkbox input[type=checkbox]:checked + label:after{
+  border-color:#081472;
+}

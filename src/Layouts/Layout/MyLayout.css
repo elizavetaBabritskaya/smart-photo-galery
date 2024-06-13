@@ -1,0 +1,33 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.site__sider {
+  background: white;
+  padding: 0;
+  max-width: 250px;
+  width: 100%;
+  margin: 0;
+}
+
+.site__content {
+  margin: 24px 16px;
+  padding: 24px;
+  min-height: 280px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  max-width: 300px;
+  width: 100%;
+  margin: 0;
+}
+

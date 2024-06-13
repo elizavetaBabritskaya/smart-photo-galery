@@ -1,0 +1,123 @@
+.layout__sign {
+  max-width: 1920px;
+  padding-top: 100px;
+  padding-bottom: 305px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(./images/sign.png);
+}
+
+.title__sign {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 47px;
+  color: #081472;
+  margin-top: 50px;
+}
+
+.sign__nav {
+  max-width: 444px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 112px;
+  
+}
+
+.nav__link {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  text-decoration: none;
+  color: #081472;
+}
+
+.form__reg {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.name__label {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #AFB2CD;
+}
+
+.name__input {
+  background: #FFFFFF;
+  border: 2px solid #C9CCE2;
+  border-radius: 12px;
+  height: 50px;
+  width: 370px;
+  padding-left: 15px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #AFB2CD;
+}
+
+.name__input:focus-visible {
+  border-color: #081472;
+}
+
+.email__label {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #AFB2CD;
+}
+
+.email__input {
+  background: #FFFFFF;
+  border: 2px solid #C9CCE2;
+  border-radius: 12px;
+  height: 50px;
+  width: 370px;
+  padding-left: 15px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #AFB2CD;
+}
+
+.email__input:focus-visible{
+  border-color: #081472;
+}
+
+.button__submit {
+  margin-top: 50px;
+  display: block;
+  width: 76px;
+  height: 60px;
+  background: #C9CCE2;
+  border-radius: 30.5px;
+}
+
+.content__sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
